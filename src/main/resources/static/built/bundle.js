@@ -34118,55 +34118,55 @@ var App = /*#__PURE__*/function (_React$Component) {
         path: '/api/instrumentos'
       }).done(function (response) {
         _this2.setState({
-          employees: response.entity._embedded.instrumentos
+          instrumentos: response.entity._embedded.instrumentos
         });
       });
     }
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("instrumentosList", {
+      return /*#__PURE__*/React.createElement(InstrumentoList, {
         instrumentos: this.state.instrumentos
       });
     }
   }]);
   return App;
 }(React.Component);
-var InstrumentosList = /*#__PURE__*/function (_React$Component2) {
-  _inherits(InstrumentosList, _React$Component2);
-  var _super2 = _createSuper(InstrumentosList);
-  function InstrumentosList() {
-    _classCallCheck(this, InstrumentosList);
+var InstrumentoList = /*#__PURE__*/function (_React$Component2) {
+  _inherits(InstrumentoList, _React$Component2);
+  var _super2 = _createSuper(InstrumentoList);
+  function InstrumentoList() {
+    _classCallCheck(this, InstrumentoList);
     return _super2.apply(this, arguments);
   }
-  _createClass(InstrumentosList, [{
+  _createClass(InstrumentoList, [{
     key: "render",
     value: function render() {
       var instrumentos = this.props.instrumentos.map(function (instrumento) {
-        return /*#__PURE__*/React.createElement(Instrumentos, {
+        return /*#__PURE__*/React.createElement(Instrumento, {
           key: instrumento._links.self.href,
           instrumento: instrumento
         });
       });
-      return /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Nombre"), /*#__PURE__*/React.createElement("th", null, "Categoria"), /*#__PURE__*/React.createElement("th", null, "Descripcion")), instrumentos));
+      return /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", null, "Nombre"), /*#__PURE__*/React.createElement("th", null, "Categor\xEDa"), /*#__PURE__*/React.createElement("th", null, "Descripci\xF3n")), instrumentos));
     }
   }]);
-  return InstrumentosList;
+  return InstrumentoList;
 }(React.Component);
-var Employee = /*#__PURE__*/function (_React$Component3) {
-  _inherits(Employee, _React$Component3);
-  var _super3 = _createSuper(Employee);
-  function Employee() {
-    _classCallCheck(this, Employee);
+var Instrumento = /*#__PURE__*/function (_React$Component3) {
+  _inherits(Instrumento, _React$Component3);
+  var _super3 = _createSuper(Instrumento);
+  function Instrumento() {
+    _classCallCheck(this, Instrumento);
     return _super3.apply(this, arguments);
   }
-  _createClass(Employee, [{
+  _createClass(Instrumento, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, this.props.instrumento.Nombre), /*#__PURE__*/React.createElement("td", null, this.props.instrumento.Categoria), /*#__PURE__*/React.createElement("td", null, this.props.instrumento.Descripcion));
+      return /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, this.props.instrumento.nombre), /*#__PURE__*/React.createElement("td", null, this.props.instrumento.categoria), /*#__PURE__*/React.createElement("td", null, this.props.instrumento.descripcion));
     }
   }]);
-  return Employee;
+  return Instrumento;
 }(React.Component);
 ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.getElementById('react'));
 
